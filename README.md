@@ -8,7 +8,7 @@ This server is part of the ClassOptima project, designed to manage and optimize 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/bakare-dev/ClassOptima.git
+   git clone https://github.com/bakare-dev/ClassOptima-Api.git
    ```
 2. Navigate to the backend directory:
    ```bash
@@ -76,7 +76,7 @@ This server is part of the ClassOptima project, designed to manage and optimize 
 
 This server provides APIs for managing class schedules. Refer to the API documentation for details on endpoints and usage.
 
-docs: https://classoptima.bakare.tech/swagger
+docs: /swagger
 
 ## Contributing
 
