@@ -1,147 +1,85 @@
-
 ---
 
-# ClassOptima Timetable Scheduler
+# Timetable Scheduler Server
 
-Welcome to the ClassOptima Timetable Scheduler project! This project aims to provide a robust solution for managing class schedules efficiently.
-
-**UI/UX Design:** [Figma Prototype](https://www.figma.com/file/K4Xk5k7pIX8aeQqmvYSTeB/Untitled?type=design&node-id=0%3A1&mode=design&t=ONkkH4hsu1aG3UIk-1)
-
-**Documentation:** [Project Documentation](https://docs.google.com/document/d/11n_TYFEynqpTnvAOKrJC-x9fNOyhIy7l/edit?usp=drive_link&ouid=105202207662230114941&rtpof=true&sd=true)
+This server is part of the ClassOptima project, designed to manage and optimize class schedules.
 
 ## Installation
 
-To get started, clone this repository:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bakare-dev/ClassOptima.git
+   ```
+2. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+3. Create a `.env` file in the root directory and add the following configurations:
 
-```bash
-git clone https://github.com/bakare-dev/ClassOptima.git
-```
+   ```
+   PORT=
+   DEV_DB=
+   DEV_USER=
+   DEV_PASSWORD=
+   DEV_HOST=
+   WINSTONSOURCETOKEN=
+   WINSTONSOURCEID=
+   REDISPORT=
+   REDISURL=
+   SMTP_HOST=
+   SMTP_PORT=
+   SMTP_USN=
+   SMTP_PASSWORD=
+   JWT_SECRET=
+   AWS_S3_BUCKET=
+   AWS_S3_REGION=
+   AWS_ACCESS_KEY=
+   AWS_SCERET_KEY=
+   ```
 
-## Backend Development
+4. Uncomment the database connection initialization in `main.js`:
+   ```javascript
+   const db = new DatabaseEngine();
+   db.connect(async () => {
+       let serverEngine = new Server(config.server.port);
+       serverEngine.start();
+   });
+   ```
 
-Switch to the backend development branch:
+5. Run `npm install` to install dependencies.
 
-```bash
-git checkout backend-dev
-```
+6. Start the server with `npm start`.
 
-Refer to the README in the backend-dev branch for instructions on setting up and running the backend code.
+7. After the first run, stop the application and revert the changes in `main.js`:
+   ```javascript
+   // const db = new DatabaseEngine();
+   // db.connect( async () => {
+   //     let serverEngine = new Server(config.server.port);
+   //     serverEngine.start();
+   // });
+   let server = new Server(config.server.port);
+   server.start();
+   ```
 
-## Algorithm for Generating Class Timetable
+8. Comment out the database connection initialization again:
+   ```javascript
+   // const db = new DatabaseEngine();
+   // db.connect( async () => {
+   //     let serverEngine = new Server(config.server.port);
+   //     serverEngine.start();
+   // });
+   ```
 
-The `generateClassTimetable` algorithm follows these steps:
+9. Run `npm start` again and enjoy!
 
-1. **Initialization**:
-   - Prepare an empty timetable object with slots for Monday to Friday.
+## Usage
 
-2. **Processing Events**:
-   - Iterate over each event.
-   - For each event:
-     - Retrieve the venue and recurring status.
-     - Retrieve associated levels and departments for the event.
-     - If the event is recurring:
-       - Check if it's scheduled for a specific day or every day of the week.
-       - If scheduled, add the event details to the respective day's timetable.
-     - If it's not recurring, add the event details to its specified day's timetable.
+This server provides APIs for managing class schedules. Refer to the API documentation for details on endpoints and usage.
 
-3. **Assign Courses**:
-   - Iterate over each course.
-   - Check if the course's level or department matches with any event's level or department.
-   - If matched, find available slots in the timetable for the course and assign it to the timetable.
+docs: https://classoptima.bakare.tech/swagger
 
-4. **Cleanup and Storage**:
-   - Remove unnecessary properties from the timetable.
-   - Write the timetable to a JSON file.
+## Contributing
 
-## Algorithm for Generating Exam Timetable
-
-The `generateExamTimetable` algorithm follows these steps:
-
-1. **Initialization**:
-   - Prepare an empty timetable object.
-
-2. **Processing Dates**:
-   - Iterate over each date between the start and end dates.
-   - Check if the date falls on a weekday.
-   - If yes, prepare the timetable entry for that date.
-
-3. **Assign Exams**:
-   - Iterate over each course.
-   - Check if the course's exam is not already scheduled.
-   - Find available slots for the exam on the respective date and assign it to the timetable.
-
-4. **Storage**:
-   - Write the timetable to a JSON file.
-
-## Data Flow Diagrams (DFDs)
-
-### Level 0 DFD:
-
-```
-               +-------------------+
-               |   Timetable      |
-               |   Generator      |
-               +--------+----------+
-                        |
-                        V
-       +-----------------------------------+
-       |       Generate Timetable         |
-       +-----------------------------------+
-                        |
-                        V
-       +-----------------------------------+
-       |       Process Courses & Events    |
-       +-----------------------------------+
-                        |
-                        V
-       +-----------------------------------+
-       |       Generate Class Timetable    |
-       |       Generate Exam Timetable     |
-       |       Generate Excel Timetable    |
-       +-----------------------------------+
-                        |
-                        V
-       +-----------------------------------+
-       |       Store Timetable             |
-       +-----------------------------------+
-```
-
-### Level 1 DFD (Expanded "Generate Timetable" Process):
-
-```
-               +-------------------+
-               |   Timetable      |
-               |   Generator      |
-               +--------+----------+
-                        |
-                        V
-       +-----------------------------------+
-       |       Generate Timetable         |
-       +-----------------------------------+
-                        |
-                        V
-       +-----------------------------------+
-       |       Input: Courses, Events     |
-       |       Output: Timetable          |
-       +-----------------------------------+
-```
-
-This DFD provides a high-level overview of the data flow and processes involved in the timetable generation system. Each process can be further expanded to include detailed subprocesses and data transformations.
-
-## Acknowledgements
-
-Special thanks to [Dev Hills](https://github.com/dev-hills) for his valuable contributions to the frontend development, and our anonymous UI/UX designer for his exceptional design work.
-
-Your contributions have greatly enhanced the functionality and usability of the ClassOptima Timetable Scheduler project. We appreciate your dedication and expertise!
-
-## Contributions
-
-Contributions are welcome! Please refer to the contribution guidelines in the respective branches for more information.
-
-## Issues
-
-If you encounter any issues or have suggestions, please feel free to open an issue in the respective branches' issue tracker.
-
-Happy scheduling!
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
 ---

@@ -1,0 +1,61 @@
+{
+  "Monday": [
+    {
+      "event": "Chapel Services",
+      "venue": "LT A",
+      "startFrom": "08:00:00",
+      "endsAt": "10:00:00",
+      "departments": [
+        "Computer Science",
+        "Mathematics"
+      ],
+      "levels": []
+    },
+    {
+      "courseId": 3,
+      "courseCode": "CS103",
+      "courseName": "Introduction to Computer Science",
+      "unit": 3,
+      "venue": "LT C",
+      "level": "100",
+      "startFrom": "10:00:00",
+      "endsAt": "12:00:00"
+    },
+    {
+      "courseId": 4,
+      "courseCode": "CS104",
+      "courseName": "Introduction to Computer Science",
+      "unit": 3,
+      "venue": "LT C",
+      "level": "100",
+      "startFrom": "12:00:00",
+      "endsAt": "14:00:00"
+    },
+    {
+      "courseId": 5,
+      "courseCode": "CS106",
+      "courseName": "Introduction to Computer Science",
+      "unit": 2,
+      "venue": "LT C",
+      "level": "100",
+      "startFrom": "14:00:00",
+      "endsAt": "16:00:00"
+    }
+  ],
+  "Tuesday": [],
+  "Wednesday": [],
+  "Thursday": [
+    {
+      "event": "Chapel Service",
+      "venue": "LT A",
+      "startFrom": "08:00:00",
+      "endsAt": "10:00:00",
+      "departments": [
+        "Computer Science",
+        "Mathematics"
+      ],
+      "levels": []
+    }
+  ],
+  "Friday": []
+}

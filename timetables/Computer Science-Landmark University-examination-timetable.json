@@ -1,0 +1,32 @@
+{
+  "2024-04-22": [
+    {
+      "courseExamId": 2,
+      "courseId": 4,
+      "courseCode": "CS104",
+      "courseName": "Introduction to Computer Science",
+      "unit": 3,
+      "venue": "LT C",
+      "level": "100",
+      "startFrom": "08:00:00",
+      "endsAt": "10:00:00",
+      "day": "2024-04-22"
+    },
+    {
+      "courseExamId": 3,
+      "courseId": 5,
+      "courseCode": "CS106",
+      "courseName": "Introduction to Computer Science",
+      "unit": 2,
+      "venue": "LT C",
+      "level": "100",
+      "startFrom": "10:00:00",
+      "endsAt": "12:00:00",
+      "day": "2024-04-22"
+    }
+  ],
+  "2024-04-23": [],
+  "2024-04-24": [],
+  "2024-04-25": [],
+  "2024-04-26": []
+}
