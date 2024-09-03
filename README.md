@@ -14,7 +14,7 @@ Welcome to the ClassOptima Timetable Scheduler project! This project aims to pro
 To get started, clone this repository:
 
 ```bash
-git clone https://github.com/bakare-dev/ClassOptima.git
+git clone https://github.com/bakare-dev/ClassOptima-Api.git
 ```
 
 ## Backend Development
