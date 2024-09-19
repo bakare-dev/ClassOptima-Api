@@ -19,13 +19,13 @@ module.exports = {
   infrastructure: {
     dateFormat: "YYYY-MM-DD HH:mm:ss",
     serverbaseUrl: {
-      production: "https://classoptima.bakare.tech",
+      production: "",
       development: "http://localhost:9001",
       test: "",
     },
     clientbaseUrl: {
-      production: "https://classoptima.brimble.app",
-      production2: "https://adminclassoptima.brimble.app",
+      production: "",
+      production2: "",
       development: "http://localhost:5173",
       test: "",
     },
