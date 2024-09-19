@@ -130,7 +130,7 @@ This DFD provides a high-level overview of the data flow and processes involved 
 
 ## Acknowledgements
 
-Special thanks to [Dev Hills](https://github.com/dev-hills) for his valuable contributions to the frontend development, and our anonymous UI/UX designer for his exceptional design work.
+Special thanks to [Dev Hills](https://github.com/dev-hills) for his valuable contributions to the frontend development, and ASU DAVID(UI/UX designer) for his exceptional design work.
 
 Your contributions have greatly enhanced the functionality and usability of the ClassOptima Timetable Scheduler project. We appreciate your dedication and expertise!
 
